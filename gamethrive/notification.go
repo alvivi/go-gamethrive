@@ -22,6 +22,8 @@ type Notification struct {
 	IncludedIOSTokens     []string `json:"include_ios_tokens,omitempty"`
 	IncludedAndroidRegIds []string `json:"include_android_reg_ids,omitempty"`
 	// Optional Body Paramters
+
+	ContentAvailable   bool              `json:"content_available,omitempty"`
 	IOSBadgeType       BadgeType         `json:"ios_badgeType,omitempty"`
 	IOSBadgeCount      int               `json:"ios_badgeCount,omitempty"`
 	IOSSound           string            `json:"ios_sound,omitempty"`
