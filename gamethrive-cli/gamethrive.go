@@ -1,7 +1,6 @@
 package main
 
 import (
-	"../gamethrive"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -9,6 +8,8 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"../gamethrive"
 )
 
 var (
@@ -209,6 +210,9 @@ func NewAction(args []string) []string {
 }
 
 func GetHandler(mux map[string]interface{}, action []string) Handler {
+	if len(action) <= 0 {
+		return nil
+	}
 	leaf, ok := mux[action[0]]
 	if !ok {
 		return nil
